@@ -1,5 +1,3 @@
-using System;
-
 namespace CalculatorMVC.Models
 {
     public class ErrorViewModel
