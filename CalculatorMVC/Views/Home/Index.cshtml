@@ -1,26 +1,30 @@
 ﻿@model Operation
-<form asp-controller="Home" asp-action="Index" method="post">
-    <div class="form-group">
-        <div class="row">
-            <label asp-for="NumberA" class="col-lg-2"></label>
-            <input type="number" asp-for="NumberA" class="col-lg-2" />
-        </div>
-        <div class="row">
-            <label asp-for="NumberB" class="col-lg-2"></label>
-            <input type="number" asp-for="NumberB" class="col-lg-2" />
-        </div>
-        <div class="row">
-            <label asp-for="OperationType" class="col-lg-2"></label>
-            <select asp-for="OperationType" class="col-lg-2" asp-items="Html.GetEnumSelectList<OperationType>()">
-                <option selected="selected" value="">Select</option>
-            </select>
-        </div>
-        <div class="row">
-            <label asp-for="Result" class="col-lg-2"></label>
-            <input type="number" disabled="disabled" class="col-lg-2" asp-for="Result" />
-        </div>
-        <div class="row">
-            <input type="submit" value="Submit" asp-action="Index" />
-        </div>
+
+<div class="container mt-5">
+    <div class="card shadow-lg p-4">
+        <h2 class="text-center mb-4">Simple Calculator</h2>
+        <form asp-controller="Home" asp-action="Index" method="post">
+            <div class="mb-3">
+                <label asp-for="NumberA" class="form-label">Number A</label>
+                <input type="number" class="form-control" asp-for="NumberA" placeholder="Enter first number" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="NumberB" class="form-label">Number B</label>
+                <input type="number" class="form-control" asp-for="NumberB" placeholder="Enter second number" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="OperationType" class="form-label">Operation</label>
+                <select class="form-select" asp-for="OperationType" asp-items="Html.GetEnumSelectList<OperationType>()">
+                    <option selected value="">Select operation</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Result" class="form-label">Result</label>
+                <input type="number" class="form-control" asp-for="Result" disabled />
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary w-100">Calculate</button>
+            </div>
+        </form>
     </div>
-</form>
+</div>

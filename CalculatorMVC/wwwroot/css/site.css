@@ -69,3 +69,16 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+
+/*----Custom-styles---*/
+
+body {
+    background-color: #f8f9fa;
+}
+
+.card {
+    max-width: 400px;
+    margin: auto;
+    border-radius: 10px;
+}
