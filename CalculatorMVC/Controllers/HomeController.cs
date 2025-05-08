@@ -23,7 +23,7 @@ namespace CalculatorMVC.Controllers
         [HttpPost]
         public IActionResult Index(Operation model)
         {
-            switch(model.OperationType)
+            switch (model.OperationType)
             {
                 case OperationType.Addition:
                     model.Result = model.NumberA + model.NumberB;
