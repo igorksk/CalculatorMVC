@@ -3,15 +3,21 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CalculatorMVC</title>
+    <title>@(ViewData["Title"] ?? "CalculatorMVC")</title>
+    <meta name="description" content="A simple calculator web app." />
+    <meta property="og:title" content="CalculatorMVC" />
+    <meta property="og:description" content="A simple calculator web app." />
+    <link rel="icon" href="~/favicon.ico" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
+    <a class="skip-link" href="#maincontent">Skip to main content</a>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3"
+                aria-label="Calculator navigation">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">CalculatorMVC</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index" aria-label="Calculator home">CalculatorMVC</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -30,7 +36,7 @@
         </nav>
     </header>
     <div class="container">
-        <main role="main" class="pb-3">
+        <main id="maincontent" role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
