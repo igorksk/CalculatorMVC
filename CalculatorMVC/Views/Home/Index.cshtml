@@ -8,21 +8,24 @@
     <div class="card shadow-lg p-4">
         <h2 class="text-center mb-4">Simple Calculator</h2>
         <form asp-controller="Home" asp-action="Index" method="post" novalidate>
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div asp-validation-summary="All" class="text-danger"></div>
 
             <div class="mb-3">
                 <label asp-for="NumberA" class="form-label">Number A</label>
                 <input type="number" class="form-control" asp-for="NumberA" placeholder="Enter first number" aria-required="true" required />
+                <span asp-validation-for="NumberA" class="text-danger"></span>
             </div>
             <div class="mb-3">
                 <label asp-for="NumberB" class="form-label">Number B</label>
                 <input type="number" class="form-control" asp-for="NumberB" placeholder="Enter second number" aria-required="true" required />
+                <span asp-validation-for="NumberB" class="text-danger"></span>
             </div>
             <div class="mb-3">
                 <label asp-for="OperationType" class="form-label">Operation</label>
                 <select class="form-select" asp-for="OperationType" asp-items="Html.GetEnumSelectList<OperationType>()" aria-required="true" required>
                     <option value="">Select operation</option>
                 </select>
+                <span asp-validation-for="OperationType" class="text-danger"></span>
             </div>
             <div class="mb-3">
                 <label asp-for="Result" class="form-label">Result</label>
@@ -34,3 +37,7 @@
         </form>
     </div>
 </div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
